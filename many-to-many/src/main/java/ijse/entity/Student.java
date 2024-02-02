@@ -1,9 +1,8 @@
-package lk.ijse.entity;
+package ijse.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "Student")
@@ -12,6 +11,9 @@ public class Student {
     private String name;
     private int age;
     private String school;
+    @ManyToMany
+    private List<Laptop> laptop;
+
     public Student (){}
 
     public Student(String name, int age, String school, Laptop laptop) {
@@ -52,9 +54,6 @@ public class Student {
     public void setLaptop(Laptop laptop) {
         this.laptop = laptop;
     }
-
-    @OneToOne
-    private Laptop laptop;
 
 
     @Override

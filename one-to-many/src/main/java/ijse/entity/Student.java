@@ -1,9 +1,7 @@
-package lk.ijse.entity;
+package ijse.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Student")
@@ -11,15 +9,18 @@ public class Student {
     @Id
     private String name;
     private int age;
-    private String school;
-    public Student (){}
 
-    public Student(String name, int age, String school, Laptop laptop) {
+    @OneToMany(mappedBy = "student")
+    private List<Laptop> laptop;
+
+    public Student() {}
+
+    public Student(String name, int age, List<Laptop> laptop) {
         this.name = name;
         this.age = age;
-        this.school = school;
         this.laptop = laptop;
     }
+
 
     public String getName() {
         return name;
@@ -37,35 +38,14 @@ public class Student {
         this.age = age;
     }
 
-    public String getSchool() {
-        return school;
-    }
-
-    public void setSchool(String school) {
-        this.school = school;
-    }
-
-    public Laptop getLaptop() {
+    public List<Laptop> getLaptop() {
         return laptop;
     }
 
-    public void setLaptop(Laptop laptop) {
+    public void setLaptop(List<Laptop> laptop) {
         this.laptop = laptop;
     }
 
-    @OneToOne
-    private Laptop laptop;
+   }
 
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", school='" + school + '\'' +
-                '}';
-    }
-
-
-}
 

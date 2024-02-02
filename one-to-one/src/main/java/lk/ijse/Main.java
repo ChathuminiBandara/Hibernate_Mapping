@@ -1,17 +1,40 @@
 package lk.ijse;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import lk.ijse.config.FactoryConfiguration;
+import lk.ijse.entity.Laptop;
+import lk.ijse.entity.Student;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Laptop laptop = new Laptop();
+        laptop.setName("Huawei");
+        laptop.setLapId(002);
+
+        Student student = new Student();
+        student.setName("AAAAA");
+        student.setSchool("KR.Soul");
+        student.setAge(26);
+        student.setLaptop(laptop);
+
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        //session.delete(laptop);
+        // session.update(laptop);
+        session.save(student);
+        session.save(laptop);
+
+
+       /* Laptop s =  session.get(Laptop.class,1);
+        Student st = session.get(Student.class,2);
+*/
+        //Laptop s =  session.load(Laptop.class,2);
+
+        System.out.println();
+        transaction.commit();
+        session.close();
     }
 }

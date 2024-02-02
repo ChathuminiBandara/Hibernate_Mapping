@@ -1,8 +1,8 @@
-package lk.ijse;
+package ijse;
 
-import lk.ijse.config.FactoryConfiguration;
-import lk.ijse.entity.Laptop;
-import lk.ijse.entity.Student;
+import ijse.config.FactoryConfiguration;
+import ijse.entity.Laptop;
+import ijse.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -30,11 +30,16 @@ public class Main {
 
        /* Laptop s =  session.get(Laptop.class,1);
         Student st = session.get(Student.class,2);
-*/
+        */
         //Laptop s =  session.load(Laptop.class,2);
 
-        System.out.println();
         transaction.commit();
         session.close();
     }
 }
+
+
+
+
+/*
+gotta create */
