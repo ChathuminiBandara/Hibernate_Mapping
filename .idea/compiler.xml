@@ -6,12 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="one-to-one" />
         <module name="many-to-many" />
+        <module name="Eager-Fetching" />
+        <module name="HQL-IN-Hibernate" />
+        <module name="one-to-one" />
         <module name="one-to-many" />
         <module name="SQL-IN-Hibernate" />
         <module name="Lazy-Fetching" />
-        <module name="Eager-Fetching" />
       </profile>
     </annotationProcessing>
   </component>
