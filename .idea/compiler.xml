@@ -9,7 +9,9 @@
         <module name="one-to-one" />
         <module name="many-to-many" />
         <module name="one-to-many" />
+        <module name="SQL-IN-Hibernate" />
         <module name="Lazy-Fetching" />
+        <module name="Eager-Fetching" />
       </profile>
     </annotationProcessing>
   </component>

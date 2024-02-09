@@ -9,6 +9,8 @@
         <option value="$PROJECT_DIR$/many-to-many/pom.xml" />
         <option value="$PROJECT_DIR$/Lazy-Fetching/pom.xml" />
         <option value="$PROJECT_DIR$/Eager-Fetching/pom.xml" />
+        <option value="$PROJECT_DIR$/SQL-IN-Hibernate/pom.xml" />
+        <option value="$PROJECT_DIR$/HQL-IN-Hibernate/pom.xml" />
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
