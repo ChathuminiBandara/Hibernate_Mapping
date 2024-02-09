@@ -5,7 +5,6 @@ import ijse.entity.Laptop;
 import ijse.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +27,8 @@ public class Main {
         student.setAge(26);
         //student.setLaptop();
 
-        List<Laptop> laptopList = new Laptop ArrayList<>();
+        List<Laptop> laptopList = new  ArrayList<> ();
+
         laptopList.add(laptop1);
         laptopList.add(laptop2);
 
@@ -43,8 +43,8 @@ public class Main {
 
 
        /* Laptop s =  session.get(Laptop.class,1);
-        Student st = session.get(Student.class,2);  */
-        //Laptop s =  session.load(Laptop.class,2);
+        Student st = session.get(Student.class,2);
+        Laptop s =  session.load(Laptop.class,2);*/
 
         System.out.println();
         transaction.commit();

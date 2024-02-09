@@ -1,7 +1,6 @@
 package ijse.entity;
 
 import jakarta.persistence.*;
-
 import java.util.List;
 
 @Entity
@@ -20,7 +19,7 @@ public class Student {
         this.name = name;
         this.age = age;
         this.school = school;
-        this.laptop = laptop;
+        this.laptop = (List<Laptop>) laptop;
     }
 
     public String getName() {
@@ -48,11 +47,11 @@ public class Student {
     }
 
     public Laptop getLaptop() {
-        return laptop;
+        return (Laptop) laptop;
     }
 
     public void setLaptop(Laptop laptop) {
-        this.laptop = laptop;
+        this.laptop = (List<Laptop>) laptop;
     }
 
 

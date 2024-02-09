@@ -28,5 +28,4 @@ public class Laptop {
     public void setName(String name) {this.name = name;}
 
 
-
 }
